@@ -8,13 +8,9 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class HomePage {
 
-  site = {
-    url: 'javasampleapproach.com',
-    description: 'Java Technology - Spring Framework'
-  };
+  
 
   constructor(public navCtrl: NavController, public db: AngularFireDatabase) {
-    this.db.list('site').push(this.site);
   }
 
 }
