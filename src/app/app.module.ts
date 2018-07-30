@@ -8,6 +8,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import {EmergencyPage} from '../pages/emergency/emergency';
+import {LoginPage} from '../pages/login/login';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,7 +24,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     ContactPage,
     HomePage,
     TabsPage,
-    EmergencyPage
+    EmergencyPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     ContactPage,
     HomePage,
     TabsPage,
-    EmergencyPage
+    EmergencyPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
