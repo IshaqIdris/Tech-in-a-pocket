@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the RegisterPage page.
@@ -19,14 +20,34 @@ export class RegisterPage {
   email:string;
   password:string;
 
-  constructor(private fire: AngularFireAuthModule,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private fire: AngularFireAuth,public navCtrl: NavController, public navParams: NavParams, public alertCtrl:AlertController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
   }
 
+  alert(message: string) {
+    this.alertCtrl.create({
+      title: 'Info!',
+      subTitle: message,
+      buttons: ['OK']
+    }).present();
+  }
+
   register(){
-    this.auth.createUserWithEmailAndPassword(this.email, this.password);
+    this.fire.auth.createUserWithEmailAndPassword(this.email,this.password)
+    .then(data => {
+      console.log('got data ', data);
+      this.alert('Registered!');
+      this.navCtrl.push(HomePage)
+    })
+    .catch(error => {
+      console.log('got an error ', error);
+      this.alert(error.message);
+    });
+    
+    
+    
   }
 }

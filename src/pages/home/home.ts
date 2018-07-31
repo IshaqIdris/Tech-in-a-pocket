@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
   selector: 'page-home',
@@ -9,7 +8,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class HomePage {
 
 
-  constructor(public navCtrl: NavController, public db: AngularFireDatabase) {
+  constructor(public navCtrl: NavController) {
   }
 
 }
