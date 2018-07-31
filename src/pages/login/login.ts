@@ -1,7 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
-import {AngularFireAuth} from 'angularfire2/auth'
+import {AngularFireAuth} from 'angularfire2/auth';
+
 
 
 /**
@@ -50,4 +51,5 @@ export class LoginPage {
 
     
   }
+
 }

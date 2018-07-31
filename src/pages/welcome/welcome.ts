@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {LoginPage}  from '../login/login'
 import { RegisterPage } from '../register/register';
+import firebase from 'firebase';
+import {AngularFireAuth} from 'angularfire2/auth';
 
 /**
  * Generated class for the WelcomePage page.
@@ -17,7 +19,7 @@ import { RegisterPage } from '../register/register';
 })
 export class WelcomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private fire: AngularFireAuth,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -30,6 +32,11 @@ export class WelcomePage {
 
   register(){
     this.navCtrl.push(RegisterPage)
+  }
+
+  signFB(){
+    this.fire.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
+    this.fire.auth.signOut();
   }
 }
 
