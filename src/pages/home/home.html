@@ -1,7 +1,18 @@
 <ion-header color="primary">
+
+    <ion-toolbar color="primary">
+      <div class="joinNow">
+        <button small ion-button color="danger" (click)="signIn()" block>Sign In</button>
+      </div>
+      <div class="joinMsg">
+        <p>Sign Up to access all features!</p>
+      </div>
+    </ion-toolbar>
+
   <ion-navbar >
     <ion-searchbar (ionInput)="getItems($event)" placeholder="Search Help" id="searchbar"></ion-searchbar>
   </ion-navbar>
+
 </ion-header>
 
 <ion-content padding class="home">
@@ -10,9 +21,16 @@
 <ion-content class="card-background-page">
 
     <ion-card>
-      <img src="assets/imgs/home-img/fav.jpg">
-      <div class="card-title">Favourites</div>
-    </ion-card>
+        <ion-card-header>
+          Connect to WiFi
+        </ion-card-header>
+        <ion-card-content>
+          The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
+        </ion-card-content>
+      </ion-card>
+
+
   
-  
-  </ion-content>
+</ion-content>
+
+<ion-content><p> this is a {{tutorials.Step2_no}}</p></ion-content>

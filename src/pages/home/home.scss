@@ -19,7 +19,7 @@ page-home {
       top: 25%;
       font-size: 2.0em;
       width: 100%;
-    //font-weight: bold;
+      font-weight: bold;
       color: #fff;
     }
   
@@ -32,3 +32,15 @@ page-home {
     }
   
   }
+.joinNow{
+  float: right;
+  padding-right: 5%;
+}
+
+.joinMsg{
+  float: left;
+  padding-left: 5%;
+  color: #fff;
+  text-align: left;
+  align: center;
+}
