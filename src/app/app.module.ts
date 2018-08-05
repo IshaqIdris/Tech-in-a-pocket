@@ -10,7 +10,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import {EmergencyPage} from '../pages/emergency/emergency';
 import {LoginPage} from '../pages/login/login';
 import {WelcomePage} from '../pages/welcome/welcome';
-import {RegisterPage} from '../pages/register/register'
+import {RegisterPage} from '../pages/register/register';
+import { LoadingPage } from '../pages/loading/loading';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -20,6 +21,7 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
     EmergencyPage,
     LoginPage,
     WelcomePage,
-    RegisterPage
+    RegisterPage,
+    LoadingPage
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
     EmergencyPage,
     LoginPage,
     WelcomePage,
-    RegisterPage
+    RegisterPage,
+    LoadingPage
   ],
   providers: [
     StatusBar,

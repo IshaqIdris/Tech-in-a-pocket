@@ -20,18 +20,10 @@ export class HomePage {
   }
 
   ionViewDidLoad(){
-    const tutRef: firebase.database.Reference = firebase.database().ref('/Tutorials/connect to wifi/');
-    tutRef.on('value', tutSnapshot => {
-      this.tutorials = tutSnapshot.val();
-      console.log(JSON.stringify(this.tutorials));
-      for (var key in this.tutorials) {
-        if (this.tutorials.hasOwnProperty(key)) {
-            console.log(key + " -> " + this.tutorials[key]);
-        }
-    }
-    });
     const tutListRef: firebase.database.Reference = firebase.database().ref('/Tutorials/');
-    tutRef.orderByKey().on('child_added', function(snapshot){
+    this.listOfTuts = [];
+    tutListRef.orderByKey().on('child_added', function(snapshot){
+      this.listOfTuts.push(snapshot.key);
       console.log(snapshot.key);
     });
 
