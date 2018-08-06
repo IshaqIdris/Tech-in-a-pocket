@@ -18,7 +18,7 @@ import firebase from 'firebase';
 })
 export class LoadingPage {
 
-  listOfTuts: Array<any> = [];
+  items: Array<any> = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, private fdb: AngularFireDatabase) {
   
   }
@@ -26,7 +26,12 @@ export class LoadingPage {
   ionViewDidLoad() {
     this.fdb.database.ref('/Tutorials/');
     const tutListRef: firebase.database.Reference = this.fdb.database.ref('/Tutorials/');
-    tutListRef.orderByKey().on('child_added', function(snapshot){
+    tutListRef.orderByKey().on('child_added', snapshot =>{
+      this.items = [];
+      snapshot.forEach(snapshot => {
+        this.items.push(snapshot.key);
+        return false;
+      })
       console.log(snapshot.key);
     });
 
@@ -36,7 +41,10 @@ export class LoadingPage {
       duration: 3000
     });
     loader.present();
+    
     this.navCtrl.push(TabsPage);
+    console.log(this.items.length);
+    console.log(this.items.toString);
   }
 
 }

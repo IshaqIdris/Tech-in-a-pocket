@@ -12,8 +12,8 @@ import firebase from 'firebase';
 export class HomePage {
 
   tutorials = {};
-  listOfTuts: Array<any> = [];
-  output = document.getElementById('output');
+  public items: Array<any> = [];
+
   constructor(public navCtrl: NavController, public modalCtrl:ModalController, private fdb: AngularFireDatabase) {
   
     
@@ -21,16 +21,22 @@ export class HomePage {
 
   ionViewDidLoad(){
     const tutListRef: firebase.database.Reference = firebase.database().ref('/Tutorials/');
-    this.listOfTuts = [];
-    tutListRef.orderByKey().on('child_added', function(snapshot){
-      this.listOfTuts.push(snapshot.key);
+    
+    tutListRef.orderByKey().on('child_added', snapshot =>{
+      this.items = [];
+      snapshot.forEach(snapshot => {
+        this.items.push(snapshot.key);
+        return false;
+      })
+      
       console.log(snapshot.key);
     });
-
+    
 
   }
 
   signIn(){
+    
     const modal = this.modalCtrl.create(WelcomePage);
     modal.present();
   }

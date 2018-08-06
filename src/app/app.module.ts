@@ -21,6 +21,8 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
+import { FavouritesPage } from '../pages/favourites/favourites';
+import { CategoriesPage } from '../pages/categories/categories';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
     LoginPage,
     WelcomePage,
     RegisterPage,
-    LoadingPage
+    LoadingPage,
+    FavouritesPage,
+    CategoriesPage
   ],
   imports: [
     BrowserModule,
@@ -54,7 +58,9 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
     LoginPage,
     WelcomePage,
     RegisterPage,
-    LoadingPage
+    LoadingPage,
+    FavouritesPage,
+    CategoriesPage
   ],
   providers: [
     StatusBar,
