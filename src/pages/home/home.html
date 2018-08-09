@@ -20,14 +20,14 @@
 
 <ion-content class="card-background-page">
 
-    <ion-card>
-        <ion-card-header>
-          Connect to WiFi
+    <ion-card *ngFor="let tutorial of tutorials">
+        <ion-card-header (click)="tutorialClick(tutorial)">
+          <ion-icon name={{getIcon(tutorial)}}></ion-icon>
+          {{tutorial}}
         </ion-card-header>
-        <ion-card-content>
-          The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
-        </ion-card-content>
-      </ion-card>
+    </ion-card>
+    
+
 
 
   

@@ -11,11 +11,27 @@ import firebase from 'firebase';
 })
 export class HomePage {
 
-  tutorials = {};
+  tutorials :any;
   public items: Array<any> = [];
+
+  icons: any;
+
 
   constructor(public navCtrl: NavController, public modalCtrl:ModalController, private fdb: AngularFireDatabase) {
   
+    this.tutorials = [
+      'Connect to WiFi',
+      'Connect to a printer',
+      'Organise Email',
+      'Connect to Chromecast'
+    ]
+
+    this.icons = [
+      'wifi icon',
+      'printer icon',
+      'email icon',
+      'chromecast icon'
+    ]
     
   }
 
@@ -41,4 +57,15 @@ export class HomePage {
     modal.present();
   }
 
+  tutorialClick(tutorial){
+    console.log(tutorial);
+  }
+
+  getIcon(tutorial) {
+    // for all tutorials 
+    //   find matching tutorial
+    //   get index
+    //   get corresponding icon from icons using index
+    return 'star';
+  }
 }
