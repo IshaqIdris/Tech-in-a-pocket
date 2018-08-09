@@ -20,15 +20,11 @@
 
 <ion-content class="card-background-page">
 
-    <ion-card *ngFor="let tutorial of tutorials">
-        <ion-card-header (click)="tutorialClick(tutorial)">
-          <ion-icon name={{getIcon(tutorial)}}></ion-icon>
-          {{tutorial}}
-        </ion-card-header>
-    </ion-card>
+  <ion-card *ngFor="let tutorial of tutorials">
+      <ion-card-header (click)="tutorialClick(tutorial)">
+        <ion-icon name={{getIcon(tutorial)}}></ion-icon>
+        {{tutorial}}
+      </ion-card-header>
+  </ion-card>
     
-
-
-
-  
 </ion-content>

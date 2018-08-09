@@ -15,7 +15,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CategoriesPage {
 
+  categories: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+    this.categories = [
+      "Internet",
+      "Email",
+      "TV",
+      "Audio",
+      "Printer"
+    ]
   }
 
   ionViewDidLoad() {

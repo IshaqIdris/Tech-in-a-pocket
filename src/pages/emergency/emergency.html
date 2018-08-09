@@ -1,10 +1,19 @@
-<ion-header>
-    <ion-navbar>
-      <ion-title>
-        Emergency
-      </ion-title>
-    </ion-navbar>
-  </ion-header>
+<ion-header color="primary">
+
+  <ion-toolbar color="primary">
+    <div class="joinNow">
+      <button small ion-button color="danger" (click)="signIn()" block>Sign In</button>
+    </div>
+    <div class="joinMsg">
+      <p>Sign Up to access all features!</p>
+    </div>
+  </ion-toolbar>
+
+<ion-navbar >
+  <ion-searchbar (ionInput)="getItems($event)" placeholder="Search Help" id="searchbar"></ion-searchbar>
+</ion-navbar>
+
+</ion-header>
   
   <ion-content>
     <ion-list>
