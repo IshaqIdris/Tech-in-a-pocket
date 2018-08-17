@@ -25,7 +25,7 @@ export class LoadingPage {
 
   ionViewDidLoad() {
     this.fdb.database.ref('/Tutorials/');
-    const tutListRef: firebase.database.Reference = this.fdb.database.ref('/Tutorials/');
+    const tutListRef: firebase.database.Reference = this.fdb.database.ref('/');
     tutListRef.orderByKey().on('child_added', snapshot =>{
       this.items = [];
       snapshot.forEach(snapshot => {
@@ -38,11 +38,11 @@ export class LoadingPage {
     console.log('ionViewDidLoad LoadingPage');
     const loader = this.loadingCtrl.create({
       content: "Please wait...",
-      duration: 3000
+      duration: 2000
     });
     loader.present();
     
-    this.navCtrl.push(TabsPage);
+    this.navCtrl.push(TabsPage, this.items);
     console.log(this.items.length);
     console.log(this.items.toString);
   }

@@ -23,6 +23,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { FavouritesPage } from '../pages/favourites/favourites';
 import { CategoriesPage } from '../pages/categories/categories';
+import { DataProvider } from '../providers/data/data';
 
 
 @NgModule({
@@ -65,7 +66,9 @@ import { CategoriesPage } from '../pages/categories/categories';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DataProvider,
+    DataProvider
   ]
 })
 export class AppModule {}
