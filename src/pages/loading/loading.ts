@@ -24,17 +24,6 @@ export class LoadingPage {
   }
 
   ionViewDidLoad() {
-    this.fdb.database.ref('/Tutorials/');
-    const tutListRef: firebase.database.Reference = this.fdb.database.ref('/');
-    tutListRef.orderByKey().on('child_added', snapshot =>{
-      this.items = [];
-      snapshot.forEach(snapshot => {
-        this.items.push(snapshot.key);
-        return false;
-      })
-      console.log(snapshot.key);
-    });
-
     console.log('ionViewDidLoad LoadingPage');
     const loader = this.loadingCtrl.create({
       content: "Please wait...",
@@ -42,9 +31,7 @@ export class LoadingPage {
     });
     loader.present();
     
-    this.navCtrl.push(TabsPage, this.items);
-    console.log(this.items.length);
-    console.log(this.items.toString);
+    this.navCtrl.push(TabsPage);
   }
 
 }

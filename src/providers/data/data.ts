@@ -22,6 +22,20 @@ export class DataProvider {
     })
   }
 
+  getSteps(id){
+    let ref = this.fdb.list('Tutorials/' + id);
+    return ref.snapshotChanges()
+    .map(changes => {
+      return changes.map(c => ({key: c.payload.key, ...c.payload.val()}));
+    })
+  }
  
+  getCategories(){
+    let ref = this.fdb.list('Categories');
+    return ref.snapshotChanges()
+    .map(changes => {
+      return changes.map(c => ({key: c.payload.key, ...c.payload.val()}));
+    })
+  }
 
 }

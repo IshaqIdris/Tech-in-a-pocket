@@ -12,6 +12,8 @@ import {LoginPage} from '../pages/login/login';
 import {WelcomePage} from '../pages/welcome/welcome';
 import {RegisterPage} from '../pages/register/register';
 import { LoadingPage } from '../pages/loading/loading';
+import {SlidesPage} from '../pages/slides/slides';
+import {CategoryPage} from '../pages/category/category';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,6 +26,8 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { FavouritesPage } from '../pages/favourites/favourites';
 import { CategoriesPage } from '../pages/categories/categories';
 import { DataProvider } from '../providers/data/data';
+
+import {CallNumber} from '@ionic-native/call-number'
 
 
 @NgModule({
@@ -39,7 +43,9 @@ import { DataProvider } from '../providers/data/data';
     RegisterPage,
     LoadingPage,
     FavouritesPage,
-    CategoriesPage
+    CategoriesPage,
+    SlidesPage,
+    CategoryPage
   ],
   imports: [
     BrowserModule,
@@ -61,14 +67,17 @@ import { DataProvider } from '../providers/data/data';
     RegisterPage,
     LoadingPage,
     FavouritesPage,
-    CategoriesPage
+    CategoriesPage,
+    SlidesPage,
+    CategoryPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataProvider,
-    DataProvider
+    DataProvider,
+    CallNumber
   ]
 })
 export class AppModule {}

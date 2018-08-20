@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DataProvider } from '../../providers/data/data';
+import { CategoryPage } from '../category/category';
+import { Observable } from '../../../node_modules/rxjs/Observable';
 
 /**
  * Generated class for the CategoriesPage page.
@@ -15,21 +18,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CategoriesPage {
 
-  categories: any;
+  categories: Observable<any[]>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-
-    this.categories = [
-      "Internet",
-      "Email",
-      "TV",
-      "Audio",
-      "Printer"
-    ]
+  constructor(public navCtrl: NavController, public navParams: NavParams, private dataF: DataProvider)  {
+    this.categories = dataF.getCategories();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CategoriesPage');
+  }
+
+  categoryClick(category){
+    console.log(category);
+    this.navCtrl.push(CategoryPage, category);
   }
 
 }

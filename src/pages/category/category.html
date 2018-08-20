@@ -1,0 +1,29 @@
+<!--
+  Generated template for the CategoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{category}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-grid>
+        <ion-row>
+          <ion-col col-6 >
+            <div class="tuts" *ngFor="let tutorial of files | async">
+            <ion-card *ngIf="tutorial.tags == category"(click)="tutorialClick(tutorial)">
+              <img class="card-back" src="{{tutorial.img}}">
+              <div class="card-title"> {{tutorial.name}}</div>  
+            </ion-card>
+          </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+</ion-content>

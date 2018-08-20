@@ -1,0 +1,28 @@
+page-category {
+
+
+
+}
+ion-card {
+    position: relative;
+    text-align: center;
+    min-height: auto;
+    background-size: cover;
+    
+  }
+  
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 1.5em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .card-back{
+    //opacity: 0.5;
+    background-size: cover;
+    filter: brightness(50%);
+  
+  }

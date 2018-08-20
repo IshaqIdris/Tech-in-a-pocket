@@ -24,9 +24,9 @@
 
 <ion-content class="card-background-page">
 
-  <ion-card *ngFor="let category of categories">
-      <ion-card-header (click)="categoryClick(category)">
-        {{category}}
+  <ion-card *ngFor="let category of categories | async">
+      <ion-card-header (click)="categoryClick(category.name)">
+        {{category.name}}
       </ion-card-header>
   </ion-card>
     

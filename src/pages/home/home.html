@@ -20,12 +20,11 @@
   <ion-grid>
     <ion-row>
       <ion-col col-6 *ngFor="let tutorial of files | async">
-        <ion-card >
+        <ion-card (click)="tutorialClick(tutorial)">
           <img class="card-back" src="{{tutorial.img}}">
           <div class="card-title"> {{tutorial.name}}</div>  
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
-    
 </ion-content>
